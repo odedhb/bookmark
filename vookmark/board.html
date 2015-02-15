@@ -19,7 +19,16 @@ Drag this link: <a
 to your bookmark bar<br>click it when visiting an interesting page to create a task.
 
 
-{{board_id}}
+<div style="margin-top: 140px">
+Or just paste the link here:
+    <form action="../addtask">
+        <input type="text" name="url">
+        <input type="text" name="board" value="{{board_id}}" hidden="true">
+        <input type="submit" value="Add">
+    </form>
+</div>
+
+
 
 {% for task in tasks %}
 
