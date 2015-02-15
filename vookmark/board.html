@@ -12,6 +12,13 @@
 </head>
 <body unresolved>
 
+
+Welcome to board {{board_id}}<br>
+Drag this link: <a
+        href="javascript:void(window.open('http://vookmark.appspot.com/addtask?board={{board_id}}&url='+location.href, '_blank'))">+{{board_id}}</a>
+to your bookmark bar<br>click it when visiting an interesting page to create a task.
+
+
 {{board_id}}
 
 {% for task in tasks %}
