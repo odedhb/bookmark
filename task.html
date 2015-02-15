@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% autoescape true %}
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{{ app_name }} - convert the web to projects</title>
+
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+</head>
+<body unresolved>
+
+<a href={{task.url}}>{{task.title}}</a>
+
+<div layout horizontal center-center fit>
+    <form action="../edittask">
+        Description:<br>
+        <input type="text" name="description">
+        <input type="text" hidden name="id" value={{task_id}}>
+        <input type="submit" value="Save">
+
+    </form>
+    <div>
+        <a href=/edittask?id={{task_id}}&move=delete>Delete</a>
+    </div>
+    <a href={{task.url}}><img src={{task.image}}></a>
+</div>
+
+
+</body>
+</html>
+{% endautoescape %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% autoescape true %}
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{{ app_name }} - convert the web to projects</title>
+
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+</head>
+<body unresolved>
+
+{{board_id}}
+
+{% for task in tasks %}
+
+<a href=/task?id={{task.key.id()}}><h3> {{task.description}} </h3>
+    {{task.title}}
+    <img src={{task.image}} height='250'></a>
+
+{% endfor %}
+
+</body>
+</html>
+{% endautoescape %}

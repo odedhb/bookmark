@@ -1,0 +1,115 @@
+h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 900;  }
+
+p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; }
+
+
+body {
+    background-color: #efeff1;
+}
+h1 {
+    color: #263238;
+    margin-left: 20px;
+}
+
+header {
+   text-align: center;
+   background: #ffffff;
+   padding-top: 10px;
+   padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+   
+   width:100%; 
+   position:absolute; 
+   top:0px; 
+   left:0px; }
+}
+
+	
+img {
+    float: center;
+   
+}
+
+
+
+
+
+body {
+	background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
+}
+
+#wrapper {
+	width: 90%;
+	max-width: 800px;
+	min-width: 200px;
+	margin: 50px auto;
+	padding: 20px;
+	
+}
+
+#columns {
+	-webkit-column-count: 3;
+	-webkit-column-gap: 10px;
+	-webkit-column-fill: auto;
+	-moz-column-count: 3;
+	-moz-column-gap: 10px;
+	-moz-column-fill: auto;
+	column-count: 3;
+	column-gap: 15px;
+	column-fill: auto;
+	margin-top: 20px;
+
+
+}
+
+.pin {
+	display: inline-block;
+	background: #FEFEFE;
+	border: 2px solid #FAFAFA;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin: 0 2px 15px;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+	padding: 15px;
+	padding-bottom: 5px;
+	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+	opacity: 1;
+	
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+}
+
+.pin img {
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
+}
+
+.pin p {
+	font: 12px/18px Arial, sans-serif;
+	color: #333;
+	margin: 0;
+}
+
+@media (min-width: 640px) {
+	#columns {
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+	}
+}
+
+
+
+
+
+
+
+
+
+
