@@ -8,35 +8,80 @@
 
     <meta name="viewport"
           content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+          
+          <link rel="stylesheet" type="text/css" href="app/board.css">
+
+<link href='http://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+
+
+
 
 </head>
 <body unresolved>
 
 
-Welcome to board {{board_id}}<br>
-Drag this link: <a
+
+
+
+<header>
+	 
+    	<img src="/app/logo_placeholder.png">
+      
+      <h2>{{board_id}}</h2>
+      
+
+    
+</div>
+
+
+</header>
+
+
+<div id="instructions">
+
+              <p>Drag this link: <a
         href="javascript:void(window.open('http://vookmark.appspot.com/addtask?board={{board_id}}&url='+location.href, '_blank'))">+{{board_id}}</a>
-to your bookmark bar<br>click it when visiting an interesting page to create a task.
+to your bookmark bar<br>click it when visiting an interesting page to create a task.</p>
 
-
-<div style="margin-top: 140px">
-Or just paste the link here:
+<p>Or just paste the link here:</p>
     <form action="../addtask">
         <input type="text" name="url">
         <input type="text" name="board" value="{{board_id}}" hidden="true">
         <input type="submit" value="Add">
     </form>
+    
+    
+    </div>
+
+
+       
+        
+<div id="wrapper">
+        
+  
+ 
+ 	{% for task in tasks %}
+
+
+	<div class="floated_tasks">
+    <a href=/task?id={{task.key.id()}}> <img src={{task.image}} height='250'></a>
+    
+   	 	<h2>  {{task.title}} </h2>
+    	<p> {{task.description}} </p>
+    
+	</div>
+
+ {% endfor %}
+ 
+ 
 </div>
 
 
 
-{% for task in tasks %}
 
-<a href=/task?id={{task.key.id()}}><h3> {{task.description}} </h3>
-    {{task.title}}
-    <img src={{task.image}} height='250'></a>
 
-{% endfor %}
+
+
 
 </body>
 </html>
