@@ -1,10 +1,12 @@
 h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 900;  }
 
-p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; }
+h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 300; font-size: 16px; max-width: 280px;  }
+
+p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; font-size: 14px; }
 
 
 body {
-	background: url(http://subtlepatterns.com/patterns/halftone.png) ;
+	background: #eceff1 ;
 }
 
 }
@@ -13,6 +15,8 @@ h1 {
     margin-left: 20px;
 }
 
+
+
 header {
    text-align: center;
    background: #ffffff;
@@ -20,7 +24,7 @@ header {
    padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-   
+    box-shadow: 1px 1px 1px #cfd8dc;
    width:100%; 
    position:absolute; 
    top:0px; 
@@ -37,7 +41,17 @@ img {
 .floated_tasks
 {
     float: left;
+    margin: 5px;
+    border: 1px solid #ffffff;
+    height: auto;
+    width: auto;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: 2px 5px 1px #cfd8dc;
 }
+
+
+
 
 #wrapper {
     width: 800px;

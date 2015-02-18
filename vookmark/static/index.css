@@ -4,9 +4,11 @@ p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; }
 
 
 
+
 body {
-	background: url(http://subtlepatterns.com/patterns/halftone.png) ;
+	background: #eceff1 ;
 }
+
 h1 {
     color: #263238;
     margin-left: 20px;
@@ -18,8 +20,8 @@ header {
    padding-top: 10px;
    padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 0px;
-   
+    padding-bottom: 10px;
+    box-shadow: 1px 1px 1px #cfd8dc;
    width:100%; 
    position:absolute; 
    top:0px; 
