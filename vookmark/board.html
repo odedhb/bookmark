@@ -20,16 +20,13 @@
 
 <header>
 
-    <img src="/app/logo_placeholder.png">
+    <img src="/app/logo_placeholder.png"/>
+
+    <a href=../>Home</a>
 
     <h2>{{board_id}}</h2>
 
-
-    </div>
-
-
 </header>
-
 
 <div id="instructions">
 
@@ -61,7 +58,7 @@
     <a href=/task?id={{task.key.id()}}>
         <div class="floated_tasks">
             {% if task.image %}
-            <img src={{task.image}} width='300'>
+            <img src={{task.image}} width='300'/>
             {% endif %}
 
             {% if task.title %}
