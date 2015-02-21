@@ -1,3 +1,5 @@
+import Cookie
+import calendar
 import logging
 from time import mktime
 import urllib2
@@ -29,8 +31,11 @@ class Task(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        recent_boards = self.request.cookies
+
         template_values = {
-            'app_name': "VookMark"
+            'app_name': "VookMark",
+            'recent_boards': recent_boards
         }
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.write(template.render(template_values))
@@ -87,6 +92,8 @@ class TaskEdit(webapp2.RequestHandler):
 class BoardHandler(webapp2.RequestHandler):
     def get(self):
         board_id = self.request.get("id")
+
+        self.response.set_cookie(key=board_id, value=board_id)
 
         qry1 = Task.query(Task.board == board_id)
         qry2 = qry1.order(-Task.created)
@@ -164,6 +171,43 @@ class MyEncoder(json.JSONEncoder):
             return int(mktime(obj.timetuple()))
 
         return json.JSONEncoder.default(self, obj)
+
+
+# class Baker():
+# @staticmethod
+# def clear_cookie(self, name, path="/", domain=None):
+# """Deletes the cookie with the given name."""
+# expires = datetime.datetime.utcnow() - datetime.timedelta(days=365)
+#         self.set_cookie(name, value="", path=path, expires=expires,
+#                         domain=domain)
+#
+#     @staticmethod
+#     def clear_all_cookies(self):
+#         """Deletes all the cookies the user sent with this request."""
+#         for name in self.cookies.iterkeys():
+#             self.clear_cookie(name)
+#
+#     @staticmethod
+#     def get_cookie(self, name, default=None):
+#         """Gets the value of the cookie with the given name,else default."""
+#         if name in self.request.cookies:
+#             return self.request.cookies[name]
+#         return default
+#
+#     @staticmethod
+#     def set_cookie(self, name, value, domain=None, path="/", expires_days=None):
+#         """Sets the given cookie name/value with the given options."""
+#         new_cookie = Cookie.BaseCookie()
+#         new_cookie[name] = value
+#         if domain:
+#             new_cookie[name]["domain"] = domain
+#         if expires_days is not None:
+#             expires = datetime.datetime.utcnow() + datetime.timedelta(days=expires_days)
+#             new_cookie[name]["expires"] = expires
+#         if path:
+#             new_cookie[name]["path"] = path
+#         for morsel in new_cookie.values():
+#             self.response.headers.add_header('Set-Cookie', morsel.OutputString(None))
 
 
 app = webapp2.WSGIApplication(
