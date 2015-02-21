@@ -58,14 +58,21 @@
     {% for task in tasks %}
 
 
-    <div class="floated_tasks">
-        <a href=/task?id={{task.key.id()}}> <img src={{task.image}} width='300'></a>
+    <a href=/task?id={{task.key.id()}}>
+        <div class="floated_tasks">
+            {% if task.image %}
+            <img src={{task.image}} width='300'>
+            {% endif %}
 
-        <h3> {{task.title}} </h3>
+            {% if task.title %}
+            <h3> {{task.title}} </h3>
+            {% endif %}
 
-        <p> {{task.description}} </p>
-
-    </div>
+            {% if task.description %}
+            <p> {{task.description}} </p>
+            {% endif %}
+        </div>
+    </a>
 
     {% endfor %}
 
