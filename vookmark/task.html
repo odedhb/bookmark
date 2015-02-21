@@ -17,7 +17,17 @@
 <div layout horizontal center-center fit>
     <form action="../edittask">
         Description:<br>
+
+        {% if task.description %}
+
+        <input type="text" name="description" value={{task.description}}>
+
+        {% else %}
+        
         <input type="text" name="description">
+
+        {% endif %}
+
         <input type="text" hidden name="id" value={{task_id}}>
         <input type="submit" value="Save">
 
@@ -28,7 +38,11 @@
     <div>
         <a href=/edittask?id={{task_id}}&move=done>Done</a>
     </div>
+
+    {% if task.image %}
     <a href={{task.url}}><img src={{task.image}}></a>
+    {% endif %}
+
 </div>
 
 
