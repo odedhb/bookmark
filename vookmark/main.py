@@ -96,24 +96,34 @@ class BoardHandler(webapp2.RequestHandler):
 
 class TaskMaker(webapp2.RequestHandler):
     def get(self):
+
+        desc = self.request.get("desc")
         url = self.request.get("url")
         board = self.request.get("board")
+
         existing_task = Task.query(Task.url == url).get()
         existing_task_in_board = Task.query(Task.url == url, Task.board == board).get()
 
         if existing_task_in_board:
-            logging.error('existing_task_in_board')
+            logging.debug('existing_task_in_board')
             self.redirect("/board?id=" + board)
             return
 
         if existing_task:
-            logging.error('existing_task')
+            logging.debug('existing_task')
             entity = Task(url=url, title=existing_task.title, image=existing_task.image, board=board)
             entity.put()
             self.redirect("/board?id=" + board)
             return
 
-        logging.error('not_existing_task')
+        logging.debug('not_existing_task')
+
+        if not url:
+            entity = Task(board=board, description=desc)
+            entity.put()
+            self.redirect("/board?id=" + board)
+            return
+
         soup = BeautifulSoup(urllib2.urlopen(url))
         title = soup.title.string
         image = None
@@ -127,7 +137,7 @@ class TaskMaker(webapp2.RequestHandler):
                 image_relative_url = img.get('src')
                 image = urlparse.urljoin(url, image_relative_url)
 
-        entity = Task(url=url, title=title, image=image, board=board)
+        entity = Task(url=url, title=title, image=image, board=board, description=desc)
         entity.put()
         self.redirect("/board?id=" + board)
 
