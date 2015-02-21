@@ -15,3 +15,15 @@ indexes:
   - name: board
   - name: created
     direction: desc
+
+- kind: Task
+  properties:
+  - name: board
+  - name: done
+
+- kind: Task
+  properties:
+  - name: board
+  - name: done
+  - name: created
+    direction: desc

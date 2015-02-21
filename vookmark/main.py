@@ -23,6 +23,7 @@ class Task(ndb.Model):
     description = ndb.StringProperty()
     image = ndb.StringProperty()
     board = ndb.StringProperty()
+    done = ndb.BooleanProperty()
     created = ndb.DateTimeProperty(auto_now_add=True)
 
 
@@ -70,6 +71,10 @@ class TaskEdit(webapp2.RequestHandler):
         if move == "delete":
             task.key.delete()
             self.redirect("/board?id=" + board)
+        if move == "done":
+            task.done = True
+            task.put()
+            self.redirect("/board?id=" + board)
 
         new_description = self.request.get("description")
         if new_description:
@@ -83,12 +88,23 @@ class BoardHandler(webapp2.RequestHandler):
     def get(self):
         board_id = self.request.get("id")
 
-        qry = Task.query(Task.board == board_id).order(-Task.created)
-        tasks = qry.fetch(100)
+        qry1 = Task.query(Task.board == board_id)
+        qry2 = qry1.order(-Task.created)
+
+        all_tasks = qry2.fetch(100)
+        tasks = []
+        done_tasks = []
+
+        for task in all_tasks:
+            if task.done is True:
+                done_tasks.append(task)
+            else:
+                tasks.append(task)
 
         template_values = {
             'board_id': board_id,
             'tasks': tasks,
+            'done_tasks': done_tasks,
         }
         template = JINJA_ENVIRONMENT.get_template('board.html')
         self.response.write(template.render(template_values))

@@ -51,12 +51,38 @@
 
 <div id="wrapper">
 
+    <div>
+        <h1>To Do</h1>
+        {% for task in tasks %}
 
-    {% for task in tasks %}
 
+        <a href=/task?id={{task.key.id()}}>
+            <div class="floated_tasks">
+                {% if task.image %}
+                <img src={{task.image}} width='300'/>
+                {% endif %}
+
+                {% if task.title %}
+                <h3> {{task.title}} </h3>
+                {% endif %}
+
+                {% if task.description %}
+                <p> {{task.description}} </p>
+                {% endif %}
+            </div>
+        </a>
+
+        {% endfor %}
+    </div>
+
+</div>
+
+<div>
+    <h1>Done tasks</h1>
+    {% for task in done_tasks %}
 
     <a href=/task?id={{task.key.id()}}>
-        <div class="floated_tasks">
+        <div class="floated_tasks done_tasks">
             {% if task.image %}
             <img src={{task.image}} width='300'/>
             {% endif %}
@@ -72,7 +98,6 @@
     </a>
 
     {% endfor %}
-
 
 </div>
 
