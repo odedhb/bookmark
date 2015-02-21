@@ -94,33 +94,6 @@ class BoardHandler(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
 
 
-class BoardHandlerOld(webapp2.RequestHandler):
-    def get(self):
-        board_id = self.request.get("id")
-
-        qry = Task.query(Task.board == board_id).order(-Task.created)
-        tasks = qry.fetch(100)
-        tasks_html = ""
-        for task in tasks:
-            desc = task.description
-            if desc is None:
-                desc = "Edit"
-            tasks_html = tasks_html + "<a href=/task?id=" + str(task.key.id()) \
-                         + "><h3>" + desc + "</h3>" \
-                         + task.title \
-                         + "<img src=" + task.image + " height='250' ></a>"
-
-        self.response.write(
-            """
-            Welcome to board """ + board_id + """<br>
-            Drag this link: <a href="javascript:void(window.open('http://vookmark.appspot.com/addtask?board="""
-            + board_id + """&url='+location.href, '_blank'))">+""" + board_id + """</a>
-            to your bookmark bar<br>click it when visiting an interesting page to create a task.
-            """
-            + tasks_html
-        )
-
-
 class TaskMaker(webapp2.RequestHandler):
     def get(self):
         url = self.request.get("url")
