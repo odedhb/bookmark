@@ -24,41 +24,35 @@
 <header>
     <img src="/app/logo_placeholder.png">
 
-    <h2>{{ app_name }}</h2>
+    <h2>{{ app_name }} -
 
+        Create a new board for this link or attach it to an existing one:
+    </h2>
 </header>
 
 
 <div style="margin-top: 140px">
     <form action="../board">
-        <p>Create New Board</p>
+        <p>Create and attach to New Board</p>
         <input type="text" name="id">
+        <input type="text" name="url" value="{{url}}" hidden="true">
         <input type="submit" value="Submit">
     </form>
 </div>
 
 
 <div>
-    <h1>Recent boards</h1>
+    <h1>attach to existing board:</h1>
     {% for board in recent_boards %}
 
     <div>
-        <a href=/board?id={{board}}>
+        <a href=/addtask?board={{board}}&url={{url}}>
             {{board}}
         </a>
     </div>
     {% endfor %}
 </div>
 
-
-<div>
-    <p>Drag this link: <a
-            href="javascript:void(window.open('http://vookmark.appspot.com/link?url='+location.href, '_blank'))">VookMark</a>
-        to your bookmark bar<br>click it when visiting an interesting page to create a task.</p>
-</div>
-
-
-<p>Or enJOY this : <a href='http://google.com'>chrome extension</a></p>
 
 </body>
 </html>
