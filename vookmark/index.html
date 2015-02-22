@@ -73,12 +73,17 @@
     <h3>Recent Boards</h3>
     {% for board in recent_boards %}
 
+    
+    <div style="background:#4caf50; padding:20px; text-align: center;">
   
         <a href=/board?id={{board}}>
             {{board}}
         </a>
     
     {% endfor %}
+    
+    </div>
+        
 </div>
 
 
