@@ -22,43 +22,67 @@
 <body unresolved>
 
 <header>
-    <img src="/app/logo_placeholder.png">
+    <img src="/app/logo.png">
+    
 
-    <h2>{{ app_name }}</h2>
+
+  
 
 </header>
 
+    
 
-<div style="margin-top: 140px">
+
+  
+
+    
+  <div style="float:right; margin-top: 40px;">
     <form action="../board">
-        <p>Create New Board</p>
+        <h3>Create New Board</h3>
         <input type="text" name="id">
         <input type="submit" value="Submit">
     </form>
+      
+    
+      
+      <p>To pin tasks either use our <a href='http://google.com'>chrome extension</a></p>  
+      
+       
+      
+      
+       <p>Or drag this link: <a
+            href="javascript:void(window.open('http://vookmark.appspot.com/link?url='+location.href, '_blank'))">+VookMark</a>
+        to your bookmark bar<br>click it when visiting an interesting page to create a task.</p>
+</div>
+      
+      
+      
+      
+      
+      
 </div>
 
 
-<div>
-    <h1>Recent boards</h1>
+
+    
+    
+    
+    
+
+<div style="float: left; margin-top: 40px;">
+    <h3>Recent Boards</h3>
     {% for board in recent_boards %}
 
-    <div>
+  
         <a href=/board?id={{board}}>
             {{board}}
         </a>
-    </div>
+    
     {% endfor %}
 </div>
 
 
-<div>
-    <p>Drag this link: <a
-            href="javascript:void(window.open('http://vookmark.appspot.com/link?url='+location.href, '_blank'))">+VookMark</a>
-        to your bookmark bar<br>click it when visiting an interesting page to create a task.</p>
-</div>
 
-
-<p>Or enJOY this : <a href='http://google.com'>chrome extension</a></p>
 
 </body>
 </html>

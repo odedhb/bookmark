@@ -19,7 +19,7 @@ h1 {
 
 header {
    text-align: center;
-   background: #ffffff;
+   background: #4caf50;
    padding-top: 10px;
    padding-left: 10px;
     padding-right: 10px;
@@ -28,8 +28,9 @@ header {
    width:100%; 
    position:absolute; 
    top:0px; 
-   left:0px; }
+   left:0px; 
 }
+
 
 	
 img {
