@@ -27,11 +27,11 @@
 
 </header>
 
-    <h2 style="margin-top: 40px">{{ app_name }} -
+<h2 style="margin-top: 40px">{{ app_name }} -
 
-        Create a new board for this link or attach it to an existing one:
-    </h2>
-    
+    Create a new board for this link or attach it to an existing one:
+</h2>
+
 <div style="margin-top: 140px">
     <form action="../board">
         <p>Create and attach to New Board</p>
@@ -42,17 +42,19 @@
 </div>
 
 
+{% if recent_boards %}
 <div>
     <h1>attach to existing board:</h1>
     {% for board in recent_boards %}
 
     <div>
-        <a href=/addtask?board={{board}}&url={{url}}>
+        <a href="/addtask?board={{board}}&url={{url}}">
             {{board}}
         </a>
     </div>
     {% endfor %}
 </div>
+{% endif %}
 
 
 </body>

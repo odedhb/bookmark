@@ -33,7 +33,7 @@ class Task(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        recent_boards = self.request.cookies
+        recent_boards = Baker.get_boards(self.request)
 
         template_values = {
             'app_name': APP_NAME,
@@ -95,7 +95,7 @@ class BoardHandler(webapp2.RequestHandler):
     def get(self):
         board_id = self.request.get("id")
 
-        self.response.set_cookie(key=board_id, value=board_id)
+        Baker.add_board(self.request, self.response, board_id)
 
         qry1 = Task.query(Task.board == board_id)
         qry2 = qry1.order(-Task.created)
@@ -122,7 +122,7 @@ class BoardHandler(webapp2.RequestHandler):
 class BoardLessTaskMaker(webapp2.RequestHandler):
     def get(self):
         url = self.request.get("url")
-        recent_boards = self.request.cookies
+        recent_boards = Baker.get_boards(self.request)
 
         template_values = {
             'app_name': APP_NAME,
@@ -187,6 +187,38 @@ class MyEncoder(json.JSONEncoder):
             return int(mktime(obj.timetuple()))
 
         return json.JSONEncoder.default(self, obj)
+
+
+class Baker(webapp2.RequestHandler):
+    @staticmethod
+    def get_boards(request):
+        recent_boards_cookie_string = request.cookies.get("recent_boards")
+
+        if not recent_boards_cookie_string:
+            return None
+
+        try:
+            json_object = json.loads(recent_boards_cookie_string)
+        except ValueError, e:
+            return None
+
+        return json_object
+
+    @staticmethod
+    def add_board(request, response, board_id):
+        recent_boards = set()
+        cookie_boards = Baker.get_boards(request)
+        if cookie_boards:
+            for board in cookie_boards:
+                recent_boards.add(board)
+        recent_boards.add(board_id)
+
+        recent_boards_list = []
+        for board in recent_boards:
+            recent_boards_list.append(board)
+
+        recent_boards_json = json.dumps(recent_boards_list)
+        response.set_cookie(key="recent_boards", value=recent_boards_json)
 
 
 app = webapp2.WSGIApplication(

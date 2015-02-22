@@ -23,70 +23,48 @@
 
 <header>
     <img src="/app/logo.png">
-    
 
-
-  
 
 </header>
 
-    
 
-
-  
-
-    
-  <div style="float:right; margin-top: 40px;">
+<div style="float:right; margin-top: 40px;">
     <form action="../board">
         <h3>Create New Board</h3>
         <input type="text" name="id">
         <input type="submit" value="Submit">
     </form>
-      
-    
-      
-      <p>To pin tasks either use our <a href='http://google.com'>chrome extension</a></p>  
-      
-       
-      
-      
-       <p>Or drag this link: <a
+
+
+    <p>To pin tasks either use our <a href='http://google.com'>chrome extension</a></p>
+
+
+    <p>Or drag this link: <a
             href="javascript:void(window.open('http://vookmark.appspot.com/link?url='+location.href, '_blank'))">+VookMark</a>
         to your bookmark bar<br>click it when visiting an interesting page to create a task.</p>
 </div>
-      
-      
-      
-      
-      
-      
+
+
 </div>
 
 
-
-    
-    
-    
-    
-
+{% if recent_boards %}
 <div style="float: left; margin-top: 40px;">
     <h3>Recent Boards</h3>
     {% for board in recent_boards %}
 
-    
     <div style="background:#4caf50; padding:20px; text-align: center;">
-  
-        <a href=/board?id={{board}}>
+
+        <a href="/board?id={{board}}">
             {{board}}
         </a>
-    
-    {% endfor %}
-    
+
+        {% endfor %}
+
     </div>
-        
+
 </div>
-
-
+{% endif %}
 
 
 </body>
