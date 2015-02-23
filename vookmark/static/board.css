@@ -41,11 +41,10 @@ img {
 
 .floated_tasks
 {
+
     float: left;
     margin: 5px;
     border: 1px solid #ffffff;
-    height: auto;
-    width: auto;
     text-align: center;
     background: #ffffff;
     box-shadow: 2px 5px 1px #cfd8dc;
@@ -53,19 +52,41 @@ img {
 
 
 .done_tasks {
-        background: #ccc;
+    background: #ccc;
+    float: right;
 }
 
 
 #wrapper {
-    width: 800px;
+    width: 600px;
     margin: 0 auto;
+    background:#cfd8dc;
+    height: auto;
+    min-height: 100%;
+    padding: 0px auto;
 
 }
  
 #instructions {
-	margin-top: 140px;
+	margin-top: 40px;
+    float: left
 	}
+
+
+
+
+body, html {
+    height:  100%;
+    margin:  0px auto;
+    padding: 6px;
+}
+
+
+
+
+#todo {
+    margin-top: 40px;
+}
 
 
 
