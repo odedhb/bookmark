@@ -19,51 +19,61 @@
 
 
 <header>
-
-    <img src="/app/logo.png"/>
-
-    <a href=../>Home</a>
-
+    
+    
+    <a href=../><img src="/app/logo.png" onmouseover="this.src='/app/logo_active.png'" onmouseout="this.src='/app/logo.png'" /></a>
  
 
 </header>
     
-
-<div id="instructions">
     
-       <h2>{{board_id}}</h2>
+    
+<div id="container3">
+    
+    <div id="container2">
+    
 
-    <p>Drag board link: <a
-            href="javascript:void(window.open('http://vookmark.appspot.com/addtask?board={{board_id}}&url='+location.href, '_blank'))">+{{board_id}}</a> <br>
-        to your bookmark bar<br>click it when visiting an interesting page <br> to create a task.</p>
+        <div id="container1">
 
-    <p>Or add it here:</p>
+            <div id="col1">
+            <h2>{{board_id}}</h2>
 
-    <form action="../addtask">
-        link:
-        <input type="text" name="url"> <br>
-        todo:
-        <input type="text" name="desc">
-        <input type="text" name="board" value="{{board_id}}" hidden="true">
-        <input type="submit" value="Add">
-    </form>
+                <p>Drag board link: <a
+            href="javascript:void(window.open('http://vookmark.appspot.com/addtask?board=                   {{board_id}}&url='+location.href, '_blank'))">+{{board_id}}</a> <br>
+                    to your bookmark bar<br>click it when visiting an interesting page to              create a task.</p>
+                
+        <p>Or add it here:</p>
+
+        <form action="../addtask">
+            link:
+            <input type="text" name="url">
+            todo:<input type="text" name="desc">
+            <input type="text" name="board" value="{{board_id}}" hidden="true">
+            <input type="submit" value="Add">
+                </form>
 
 
-</div>
+
+        </div>  
+    
 
 
-<div id="wrapper">
 
-    <div>
-        <h2 id="todo">To Do</h2>
+
+    <div id="col2">
+        <h2>To Do</h2>
         {% for task in tasks %}
+        
+        
 
 
         <a href=/task?id={{task.key.id()}}>
             <div class="floated_tasks">
                 {% if task.image %}
-                <img src={{task.image}} width='300'/>
+                <img src={{task.image}} width='300' height="auto"/>
                 {% endif %}
+                
+     
 
                 {% if task.title %}
                 <h3> {{task.title}} </h3>
@@ -72,20 +82,26 @@
                 {% if task.description %}
                 <p> {{task.description}} </p>
                 {% endif %}
+                
+                <img src="/app/avatar.jpg" style="width:34px;height:34px"><p> Joanna says... </p>
+                
+             
+                
             </div>
         </a>
 
         {% endfor %}
     </div>
     
-  <div>
+  <div id="col3">
+      
     <h2>Done tasks</h2>
     {% for task in done_tasks %}
 
     <a href=/task?id={{task.key.id()}}>
-        <div class="floated_tasks done_tasks">
+        <div class="done_tasks">
             {% if task.image %}
-            <img src={{task.image}} width='300'/>
+            <img src={{task.image}} width='300' height="auto"/>
             {% endif %}
 
             {% if task.title %}
@@ -100,6 +116,9 @@
 
     {% endfor %}
 
+      
+</div>
+</div>
 </div>
   
     

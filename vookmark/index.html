@@ -24,7 +24,8 @@
 <body unresolved>
 
 <header>
-    <img src="/app/logo.png">
+    
+        <a href=../><img src="/app/logo.png" onmouseover="this.src='/app/logo_active.png'" onmouseout="this.src='/app/logo.png'" /></a>
 
 
 </header>
@@ -55,7 +56,7 @@
     <h3>Recent Boards</h3>
     {% for board in recent_boards %}
 
-    <div style="background:#4caf50; padding:20px; text-align: center;">
+    <div style="background:#A41936; padding:20px; text-align: center;">
 
         <a href="/board?id={{board}}">
             {{board}}
