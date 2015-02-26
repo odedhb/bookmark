@@ -1,0 +1,38 @@
+h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 900;  }
+
+h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 900; font-size: 16px; max-width: 280px;  }
+
+p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; font-size: 14px; }
+
+
+body {
+	background: #fafafa ;
+}
+
+
+ #wrapper {
+     background: #ffffff;
+     width: 600px;
+     padding: 20px;
+     margin: 0 auto;
+     box-shadow: 2px 5px 1px #bdbdbd;
+ }
+
+ #menu {
+     display: inline;
+     background: #eeeeee;
+     padding: 10px;
+height: 30px;
+}
+   
+
+
+
+
+
+
+
+
+
+
+

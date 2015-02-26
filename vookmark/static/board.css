@@ -1,6 +1,6 @@
 h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 900;  }
 
-h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 300; font-size: 16px; max-width: 280px;  }
+h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 900; font-size: 16px; max-width: 280px;  }
 
 p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; font-size: 14px; }
 
@@ -53,6 +53,11 @@ header {
 
 }
 
+
+#addnew {
+    background: #eeeeee;
+    padding: 10px;
+}
 
 
 

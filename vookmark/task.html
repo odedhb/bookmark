@@ -8,36 +8,64 @@
 
     <meta name="viewport"
           content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    
+    <link rel="stylesheet" type="text/css" href="app/task.css">
 
 </head>
 <body unresolved>
+    
+<div id="wrapper"> 
+    
+    
+     <div id="menu">  
+        
+        
+            <a href=/edittask?id={{task_id}}&move=delete>Delete</a>
+        
+        
+            <a href=/edittask?id={{task_id}}&move=done>Done</a>
+        
+        
+    </div>
+    
+    <br>
+    
+    
+    
+      {% if task.image %}
+    <a href={{task.url}}><img src={{task.image}} width='560' heigh="auto"></a>
+    {% endif %}
+    
+    
+           
+    
+    
+    <br>
 
-<a href={{task.url}}>{{task.title}}</a>
+    <p><a href={{task.url}}>{{task.title}}</a></p>
 
-<div layout horizontal center-center fit>
-    <form action="../edittask">
-        Description:<br>
+    <div layout horizontal center-center fit>
+        <form action="../edittask">
+            Description:<br>
 
-        {% if task.description %}
+            {% if task.description %}
+            
+            <input type="text" name="description" value="{{task.description}}">
 
-        <input type="text" name="description" value="{{task.description}}">
+            {% else %}
 
-        {% else %}
+            <h3><input type="text" name="description"></h3>
 
-        <input type="text" name="description">
-
-        {% endif %}
-
-        <input type="text" hidden name="id" value={{task_id}}>
-        <input type="submit" value="Save">
+            {% endif %}
+            
+            <input type="text" hidden name="id" value={{task_id}}>
+            <input type="submit" value="Save">
 
     </form>
-    <div>
-        <a href=/edittask?id={{task_id}}&move=delete>Delete</a>
-    </div>
-    <div>
-        <a href=/edittask?id={{task_id}}&move=done>Done</a>
-    </div>
+        
+        
+
+        
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -57,12 +85,11 @@
         powered by Disqus.</a></noscript>
 
 
-    {% if task.image %}
-    <a href={{task.url}}><img src={{task.image}}></a>
-    {% endif %}
+  
 
 </div>
 
+</div>
 
 </body>
 </html>

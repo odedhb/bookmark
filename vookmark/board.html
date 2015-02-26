@@ -37,6 +37,12 @@
 
             <div id="col1">
             <h2>{{board_id}}</h2>
+                
+                
+                
+                <div id="addnew">
+                    
+                    <h3>Add a task</h3>
 
                 <p>Drag board link: <a
             href="javascript:void(window.open('http://vookmark.appspot.com/addtask?board=                   {{board_id}}&url='+location.href, '_blank'))">+{{board_id}}</a> <br>
@@ -52,6 +58,8 @@
             <input type="submit" value="Add">
                 </form>
 
+                    
+                    </div>
 
 
         </div>  
@@ -76,14 +84,13 @@
      
 
                 {% if task.title %}
-                <h3> {{task.title}} </h3>
+                <p> {{task.title}} </p>
                 {% endif %}
 
                 {% if task.description %}
-                <p> {{task.description}} </p>
+                <h3> {{task.description}} </h3>
                 {% endif %}
-                
-                <img src="/app/avatar.jpg" style="width:34px;height:34px"><p> Joanna says... </p>
+             
                 
              
                 
