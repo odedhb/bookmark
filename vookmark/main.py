@@ -1,17 +1,17 @@
-import Cookie
-import calendar
 import logging
 from time import mktime
 import urllib2
 import urlparse
 import json
 import datetime
-from google.appengine.ext import ndb
-import webapp2
-from bs4 import BeautifulSoup
 import os
 
+from google.appengine.ext import ndb
+import webapp2
 import jinja2
+
+from bs4 import BeautifulSoup
+
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -218,7 +218,8 @@ class Baker(webapp2.RequestHandler):
             recent_boards_list.append(board)
 
         recent_boards_json = json.dumps(recent_boards_list)
-        response.set_cookie(key="recent_boards", value=recent_boards_json)
+        expires_time = datetime.datetime.now() + datetime.timedelta(days=365)
+        response.set_cookie(key="recent_boards", value=recent_boards_json, expires=expires_time)
 
 
 app = webapp2.WSGIApplication(
