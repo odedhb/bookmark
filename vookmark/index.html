@@ -23,53 +23,80 @@
 
 <body unresolved>
 
-<header>
+    <header>
     
-        <a href=../><img src="/app/logo.png" onmouseover="this.src='/app/logo_active.png'" onmouseout="this.src='/app/logo.png'" /></a>
+        <a href=../><img src="/app/logo.png" onmouseover="this.src='/app/logo_active.png'"                  onmouseout="this.src='/app/logo.png'" /></a>
+
+    
+    </header>
+    
+    
+    <section style="height: 60px; background-color: #fff; padding-top: 30px; padding-left: 10px;">
+    
+      <p>Getting started: to start pinning tasks you'll first need to install our free <a href='https://chrome.google.com/webstore/detail/vookmark/jnagkhifcgehbdehoapfhmkhbejmcaco'>chrome extension</a></p>
+    
+      
+    </section>
+
+    
+<div id="container3">
+    
+    <div id="container2">
+    
+
+        <div id="container1">
+
+            <div id="col1">
+                
+                <div id="addnewboard">
+                
+                
+                    <form action="../board">
+                        <h3>Create New Board</h3>
+                    <input type="text" name="id">
+                    <input type="submit" value="Submit">
+                    </form>
+                    
+                      <p>Or drag this link: <a
+                    href="javascript:void(window.open('http://vookmark.appspot.com/link?                                        url='+location.href, '_blank'))">+VookMark</a>
+                to your bookmark bar<br>click it when visiting an interesting page to create a task.</p>
+                    
+                
+                </div>
+                
+            </div>
+            
+            
+            <div id="col2">
+                    
+
+                {% if recent_boards %}
+                <div id="recentboards">
+                    <h3>Recent Boards</h3>
+    
+                    {% for board in recent_boards %}
+
+                    <div style="background:#A41936; padding:20px; text-align: center;">
+
+                        <a href="/board?id={{board}}">
+                            {{board}}
+                        </a>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+                
+                
+                {% endif %}
 
 
-</header>
-
-
-<div style="float:right; margin-top: 40px;">
-    <form action="../board">
-        <h3>Create New Board</h3>
-        <input type="text" name="id">
-        <input type="submit" value="Submit">
-    </form>
-
-
-    <p>To pin tasks either use our <a href='https://chrome.google.com/webstore/detail/vookmark/jnagkhifcgehbdehoapfhmkhbejmcaco'>chrome extension</a></p>
-
-
-    <p>Or drag this link: <a
-            href="javascript:void(window.open('http://vookmark.appspot.com/link?url='+location.href, '_blank'))">+VookMark</a>
-        to your bookmark bar<br>click it when visiting an interesting page to create a task.</p>
+       
 </div>
-
-
 </div>
-
-
-{% if recent_boards %}
-<div style="float: left; margin-top: 40px;">
-    <h3>Recent Boards</h3>
-    {% for board in recent_boards %}
-
-    <div style="background:#A41936; padding:20px; text-align: center;">
-
-        <a href="/board?id={{board}}">
-            {{board}}
-        </a>
-
-        {% endfor %}
-
-    </div>
-
-</div>
-{% endif %}
-
-
+</div>               
+                
 </body>
 </html>
 {% endautoescape %}
