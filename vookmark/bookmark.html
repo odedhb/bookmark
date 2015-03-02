@@ -30,43 +30,69 @@
 </header>
     
     
-    {% if recent_boards %}
-<div style="float: left; margin-top: 40px;">
-    <h1>attach to existing board:</h1>
-    {% for board in recent_boards %}
+   <section style="height: 60px; background-color: #fff; padding-top: 30px; padding-left: 10px;">
+    
+      <p>Choose where to put your new task.</p> 
+      
+    </section>
+    
+    
+    
+    
+<div id="container3">
+    
+    <div id="container2">
+    
 
-    <div style="background:#A41936; padding:20px; text-align: center;">
-        <a href="/addtask?board={{board}}&url={{url}}">
-            {{board}}
-        </a>
-    </div>
-    {% endfor %}
+        <div id="container1">
+
+            <div id="col1">
+                
+                
+                
+                    <form action="../board">
+                <p>New Board</p>
+                <input type="text" name="id">
+                        <input type="text" name="url" value="{{url}}" hidden="true">
+                        <input type="submit" value="Submit">
+                    </form>
+               
+                
+            </div>
+                
+                
+    
+            <div id="col2">
+    
+    
+          {% if recent_boards %}
+                <div id="existingboards">
+                    <h1>attach to existing board:</h1>
+                    {% for board in recent_boards %}
+
+                    <div style="background:#A41936; padding:20px; text-align: center;">
+                        <a href="/addtask?board={{board}}&url={{url}}">
+                            {{board}}
+                    </a>
+                </div>
+                {% endfor %}
+                </div>
+                {% endif %}
+                
+                
+            </div>
+            
 </div>
-{% endif %}
-    
-    
- 
-    
-    
-    
-    
-    
-    
-    
-
-<h2 style="margin-top: 40px">{{ app_name }} -
-
-    Create a new board for this link or attach it to an existing one:
-</h2>
-
-<div style="margin-top: 140px">
-    <form action="../board">
-        <p>Create and attach to New Board</p>
-        <input type="text" name="id">
-        <input type="text" name="url" value="{{url}}" hidden="true">
-        <input type="submit" value="Submit">
-    </form>
 </div>
+</div>   
+    
+    
+    
+    
+
+
+
+
 
 
 
