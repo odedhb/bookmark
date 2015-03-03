@@ -111,6 +111,7 @@ class BoardHandler(webapp2.RequestHandler):
                 tasks.append(task)
 
         template_values = {
+            'recent_boards': Baker.get_boards(self.request),
             'board_id': board_id,
             'tasks': tasks,
             'done_tasks': done_tasks,
@@ -122,11 +123,10 @@ class BoardHandler(webapp2.RequestHandler):
 class BoardLessTaskMaker(webapp2.RequestHandler):
     def get(self):
         url = self.request.get("url")
-        recent_boards = Baker.get_boards(self.request)
 
         template_values = {
             'app_name': APP_NAME,
-            'recent_boards': recent_boards,
+            'recent_boards': Baker.get_boards(self.request),
             'url': url
         }
         template = JINJA_ENVIRONMENT.get_template('bookmark.html')

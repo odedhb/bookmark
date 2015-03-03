@@ -16,163 +16,137 @@
 
 </head>
 <body unresolved>
-    
 
 
 <header>
-    
-    
-    <a href=../><img src="/app/logo.png" onmouseover="this.src='/app/logo_active.png'" onmouseout="this.src='/app/logo.png'" /></a>
-    
-    
 
- 
+
+    <a href=../><img src="/app/logo.png" onmouseover="this.src='/app/logo_active.png'"
+                     onmouseout="this.src='/app/logo.png'"/></a>
+
 
 </header>
-    
-    
+
+
 <section style="height: 60px; background-color: #fff; padding-top: 30px;">
-    
- 
-    
-    
-       <div class="menu-wrap">
-    <nav class="menu">
-        <ul class="clearfix">
-            
-            <li>
-                <a href="#">{{board_id}}  <span class="arrow">&#9660;</span></a>
- 
-                <ul class="sub-menu">
-                    <li><a href="#">Recent Board A</a></li>
-                    <li><a href="#">Recent Board B</a></li>
-                    <li><a href="#">Recent Board C</a></li>
-                    
-                </ul>
-            
-        </ul>
-    </nav>
-</div>
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+    <div class="menu-wrap">
+        <nav class="menu">
+            <ul class="clearfix">
+
+                <li>
+                    <a href="#">{{board_id}} <span class="arrow">&#9660;</span></a>
+
+                    <ul class="sub-menu">
+                        {% if recent_boards %}
+                        {% for board in recent_boards %}
+
+                        <li><a href="/board?id={{board}}">{{board}}</a></li>
+                        {% endfor %}
+                        {% endif %}
+                    </ul>
+
+            </ul>
+        </nav>
+    </div>
+
+
 </section>
 
-    
 
-    
-    
-    
 <div id="container3">
-    
+
     <div id="container2">
-    
+
 
         <div id="container1">
 
             <div id="col1">
-           
-                
-                
-                
+
+
                 <div id="addnew">
-                    
+
                     <h2>Add a task</h2>
 
-                <p>Click on the chrome extension icon when visiting an interesting page to create a task.</p> 
-                
-        <p>Or add it manually here:</p>
+                    <p>Click on the chrome extension icon when visiting an interesting page to create a task.</p>
 
-        <form action="../addtask">
-            link:
-            <input type="text" name="url">
-            todo:<input type="text" name="desc">
-            <input type="text" name="board" value="{{board_id}}" hidden="true">
-            <input type="submit" value="Add">
-                </form>
+                    <p>Or add it manually here:</p>
 
-                    
-                    </div>
+                    <form action="../addtask">
+                        link:
+                        <input type="text" name="url">
+                        todo:<input type="text" name="desc">
+                        <input type="text" name="board" value="{{board_id}}" hidden="true">
+                        <input type="submit" value="Add">
+                    </form>
 
 
-        </div>  
-    
+                </div>
 
 
-
-
-    <div id="col2">
-        <h2>To Do</h2>
-        {% for task in tasks %}
-        
-        
-
-
-        <a href=/task?id={{task.key.id()}}>
-            <div class="floated_tasks">
-                {% if task.image %}
-                <img src={{task.image}} width='300' height="auto"/>
-                {% endif %}
-                
-     
-
-                {% if task.title %}
-                <p> {{task.title}} </p>
-                {% endif %}
-
-                {% if task.description %}
-                <h3> {{task.description}} </h3>
-                {% endif %}
-             
-              
-             
-                
             </div>
-        </a>
 
-        
-        {% endfor %}
-    </div>
-            
-    
-  <div id="col3">
-      
-    <h2>Done tasks</h2>
-    {% for task in done_tasks %}
 
-    <a href=/task?id={{task.key.id()}}>
-        <div class="done_tasks">
-            {% if task.image %}
-            <img src={{task.image}} width='300' height="auto"/>
-            {% endif %}
+            <div id="col2">
+                <h2>To Do</h2>
+                {% for task in tasks %}
 
-            {% if task.title %}
-            <h3> {{task.title}} </h3>
-            {% endif %}
 
-            {% if task.description %}
-            <p> {{task.description}} </p>
-            {% endif %}
+                <a href=/task?id={{task.key.id()}}>
+                    <div class="floated_tasks">
+                        {% if task.image %}
+                        <img src={{task.image}} width='300' height="auto"/>
+                        {% endif %}
+
+
+                        {% if task.title %}
+                        <p> {{task.title}} </p>
+                        {% endif %}
+
+                        {% if task.description %}
+                        <h3> {{task.description}} </h3>
+                        {% endif %}
+
+
+                    </div>
+                </a>
+
+
+                {% endfor %}
+            </div>
+
+
+            <div id="col3">
+
+                <h2>Done tasks</h2>
+                {% for task in done_tasks %}
+
+                <a href=/task?id={{task.key.id()}}>
+                    <div class="done_tasks">
+                        {% if task.image %}
+                        <img src={{task.image}} width='300' height="auto"/>
+                        {% endif %}
+
+                        {% if task.title %}
+                        <h3> {{task.title}} </h3>
+                        {% endif %}
+
+                        {% if task.description %}
+                        <p> {{task.description}} </p>
+                        {% endif %}
+                    </div>
+                </a>
+
+                {% endfor %}
+
+
+            </div>
         </div>
-    </a>
+    </div>
 
-    {% endfor %}
-
-      
-</div>
-</div>
-</div>
-  
-    
-    
 
 </div>
-
 
 
 </body>
