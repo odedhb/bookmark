@@ -23,20 +23,32 @@
 
     <a href=../><img src="/app/logo.png" onmouseover="this.src='/app/logo_active.png'"
                      onmouseout="this.src='/app/logo.png'"/></a>
+    
+    
+        <h2 style="text-align: center">{{board_id}} </h2>
+    
+
+
 
 
 </header>
 
 
-<section style="height: 60px; background-color: #fff; padding-top: 30px;">
 
 
-    <div class="menu-wrap">
+ <section style="height: 60px; background-color: #2e2e2e; padding-top: 40px; padding-bottom: 10px; ">
+    
+    
+    
+
+
+
+          <div class="menu-wrap">
         <nav class="menu">
             <ul class="clearfix">
 
                 <li>
-                    <a href="#">{{board_id}} <span class="arrow">&#9660;</span></a>
+                    <a href="#">My Boards <span class="arrow">&#9660;</span></a>
 
                     <ul class="sub-menu">
                         {% if recent_boards %}
@@ -51,8 +63,8 @@
         </nav>
     </div>
 
+</section>  
 
-</section>
 
 
 <div id="container3">

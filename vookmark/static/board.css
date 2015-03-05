@@ -1,12 +1,15 @@
-h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 400;  }
+h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; color: white   }
 
-h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 700; font-size: 16px; max-width: 280px;  }
+h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 700; font-size: 16px; max-width: 280px; }
 
 p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; font-size: 14px; }
 
 
+
+
+
 body {
-	background:#f5f5f5;
+	background:#353535;
 }
 
 
@@ -15,12 +18,11 @@ body {
 
 header {
    text-align: center;
-   background: #A41936;
+   background: #2e2e2e;
    padding-top: 10px;
-   padding-left: 10px;
-    padding-right: 10px;
+
     padding-bottom: 10px;
-    box-shadow: 1px 1px 1px #e0e0e0;
+   
    width:100%; 
    position:absolute; 
    top:0px; 
@@ -62,7 +64,7 @@ header {
 
 
 #addnew {
-    background: #eeeeee;
+    background: #757575;
     padding: 10px;
     margin-top: 10px;
 }
@@ -84,14 +86,14 @@ body, html {
     float:left;
     width:100%;
 
-    background:#f5f5f5;
+    background:#353535;
      overflow:hidden;
     position:relative;
 }
 #container2 {
     float:left;
     width:100%;
-    background:#f5f5f5;
+    background:#353535;
      position:relative;
     right:30%;
 }
@@ -99,7 +101,7 @@ body, html {
 #container1 {
     float:left;
     width:100%;
-    background:#f5f5f5;
+    background:#353535;
     position:relative;
     right:40%;
 }
@@ -167,11 +169,13 @@ body {
 /*----- Menu Outline -----*/
 .menu-wrap {
     width:100%;
-    background:#ffffff;
+    background:#000000;
 }
  
 .menu {
     width:1000px;
+ 
+    
    
 }
  
@@ -180,6 +184,8 @@ body {
     list-style:none;
     font-family:'lato';
     text-decoration: none;
+
+       background:#f05757;
 
 }
  
@@ -192,7 +198,8 @@ body {
  
 .menu li:hover > a, .menu .current-item > a {
     text-decoration:none;
-    color:#be5b70;
+    color:#eeeeee;
+  
 }
  
 .menu .arrow {
@@ -214,13 +221,14 @@ body {
 }
  
 .menu > ul > li:hover > a, .menu > ul > .current-item > a {
-    background:#;
+    background:#ae4949;
 }
  
 /*----- Bottom Level -----*/
 .menu li:hover .sub-menu {
     z-index:1;
     opacity:1;
+     
 }
  
 .sub-menu {
@@ -233,7 +241,8 @@ body {
     opacity:0;
     transition:opacity linear 0.15s;
     box-shadow:0px 2px 3px rgba(0,0,0,0.2);
-    background:#ffffff;
+    background:#f05757;
+   
 }
  
 .sub-menu li {
@@ -247,7 +256,7 @@ body {
 }
  
 .sub-menu li a:hover, .sub-menu .current-item a {
-    background:#fafafa;
+     background: #ae4949;
 }
 
 
