@@ -114,6 +114,7 @@ class BoardHandler(webapp2.RequestHandler):
             'recent_boards': Baker.get_boards(self.request),
             'board_id': board_id,
             'tasks': tasks,
+            'all_tasks': all_tasks,
             'done_tasks': done_tasks,
         }
         template = JINJA_ENVIRONMENT.get_template('board.html')

@@ -92,8 +92,7 @@
                 <h2>To Do</h2>
                 {% for task in tasks %}
 
-
-                <a href=/task?id={{task.key.id()}}>
+                <a href=# id="show_dialog_{{task.key.id()}}">
                     <div class="floated_tasks">
                         {% if task.image %}
                         <img src={{task.image}} width='300' height="auto"/>
@@ -112,7 +111,6 @@
                     </div>
                 </a>
 
-
                 {% endfor %}
             </div>
 
@@ -122,7 +120,7 @@
                 <h2>Done tasks</h2>
                 {% for task in done_tasks %}
 
-                <a href=/task?id={{task.key.id()}}>
+                <a href=# id="show_dialog_{{task.key.id()}}">
                     <div class="done_tasks">
                         {% if task.image %}
                         <img src={{task.image}} width='300' height="auto"/>
@@ -149,6 +147,33 @@
 </div>
 
 
+<!--tasks windows-->
+{% for task in all_tasks %}
+
+<dialog id="task_dialog_{{task.key.id()}}">
+    {% include 'task.html' %}
+</dialog>
+
+{% endfor %}
+
 </body>
+
+<script>
+    {% for task in all_tasks %}
+        document.getElementById("show_dialog_{{task.key.id()}}").onclick = function () {
+            document.getElementById('task_dialog_{{task.key.id()}}').showModal();
+
+            document.getElementById('task_dialog_{{task.key.id()}}').addEventListener('click', function (event) {
+                var rect = document.getElementById('task_dialog_{{task.key.id()}}').getBoundingClientRect();
+                var isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height
+                        && rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+                if (!isInDialog) {
+                    document.getElementById('task_dialog_{{task.key.id()}}').close();
+                }
+            });
+        }
+        {% endfor %}
+</script>
+
 </html>
 {% endautoescape %}
