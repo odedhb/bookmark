@@ -7,6 +7,46 @@ h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 400;  color: white;
 p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; }
 
 
+/* unvisited link */
+a:link {
+    color: #fafafa;
+    font-family: 'Lato';
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #fafafa;
+    font-family: 'Lato';
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: #f05757;
+    font-family: 'Lato';
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: #f05757;
+    font-family: 'Lato';
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 body {
