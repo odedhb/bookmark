@@ -1,3 +1,5 @@
+h1 { font-family: ‘Lora’, Georgia, serif; font-weight: 400; color: white; font-size: 22px;  }
+
 h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; color: white   }
 
 h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 700; font-size: 16px; max-width: 280px; }
@@ -10,6 +12,7 @@ p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; font-size: 14px
 
 body {
 	background:#353535;
+    height: 100%
 }
 
 
@@ -37,7 +40,7 @@ header {
 .floated_tasks
 {
 
-    float: left;
+float: right;
     margin: 5px;
     border: 4px solid #ffffff;
     text-align: left;
@@ -51,7 +54,7 @@ header {
 
 
 .done_tasks {
-   float: left;
+
     font-color: #ffffff;
     margin: 5px;
     border: 4px solid #e0e0e0;
@@ -64,9 +67,15 @@ header {
 
 
 #addnew {
-    background: #757575;
-    padding: 10px;
-    margin-top: 10px;
+      float: left;
+    margin-top: 60px;
+  
+    border: 4px solid #f05757;
+    text-align: left;
+    background: #f05757;
+    box-shadow: 1px 1px 1px #000000;
+    width:200px; /* or whatever width you want. */
+   max-width:200px;
 }
 
 
@@ -82,62 +91,45 @@ body, html {
 
 
 
-#container3 {
-    float:left;
-    width:100%;
-
-    background:#353535;
-     overflow:hidden;
-    position:relative;
-}
 #container2 {
-    float:left;
-    width:100%;
-    background:#353535;
-     position:relative;
-    right:30%;
+	clear:left;
+	float:left;
+	width:100%;
+	overflow:hidden;
+	background:#353535; /* column 2 background colour */
 }
-
 #container1 {
-    float:left;
-    width:100%;
-    background:#353535;
-    position:relative;
-    right:40%;
+	float:left;
+	width:100%;
+	position:relative;
+	right:30%;
+	background:#353535; /* column 1 background colour */
 }
 #col1 {
-    float:left;
-    width:26%;
-    position:relative;
-    left:72%;
-    overflow:hidden;
+	float:left;
+	width:66%;
+	position:relative;
+	left:32%;
+	overflow:hidden;
 }
 #col2 {
-    float:left;
-   width:36%;
-    position:relative;
-    left:76%;
-    overflow:hidden;
+	float:left;
+	width:26%;
+	position:relative;
+	left:36%;
+	overflow:hidden;
 }
-#col3 {
-  width:26%;
-    position:relative;
-    left:80%;
-    overflow:hidden;
-}
-
-
 
 input[type=text] {
 
  border:0; 
-padding:4px; 
-font-size:1.3em; 
+padding:2px; 
+font-size:1.0em; 
 font-family:lato, sans-serif; 
 color:#aaa; 
 border:solid 1px #ccc; 
-margin:0 0 20px; 
-width:200px;
+margin:0 0 5px; 
+    max-width: 166px;
     -webkit-border-radius: 3px; 
 -moz-border-radius: 3px; 
 border-radius: 3px;
@@ -145,8 +137,9 @@ border-radius: 3px;
 
 input[type=submit] {
 
-border:solid 1px #ccc; 
+border:solid 1px #ae4949; 
 padding:12px 30px; 
+background: #ae4949;
 margin:0 0 20px; 
 font-family:Lato, sans-serif; 
 font-size:1.0em;
@@ -158,7 +151,7 @@ cursor:pointer;
 
 
 body {
-    background:#ffffff url('body-bg.jpg');
+    background:#353535 url('body-bg.jpg');
 }
  
 .clearfix:after {

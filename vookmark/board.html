@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="app/board.css">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    
+    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 
 
 </head>
@@ -67,7 +69,7 @@
 
 
 
-<div id="container3">
+
 
     <div id="container2">
 
@@ -79,29 +81,27 @@
 
                 <div id="addnew">
 
-                    <h2>Add a task</h2>
+                   
+       
+                    
 
-                    <p>Click on the chrome extension icon when visiting an interesting page to create a task.</p>
+                    <h1>Add a task with one click using our chrome button.</h1>
 
-                    <p>Or add it manually here:</p>
+                    <p>To add manually:</p>
 
                     <form action="../addtask">
-                        link:
+                        paste link:
                         <input type="text" name="url">
-                        todo:<input type="text" name="desc">
+                        task with no link:<input type="text" name="desc">
                         <input type="text" name="board" value="{{board_id}}" hidden="true">
                         <input type="submit" value="Add">
                     </form>
 
 
                 </div>
-
-
-            </div>
-
-
-            <div id="col2">
-                <h2>To Do</h2>
+                
+                
+                 <h1 style="text-align: center;">To Do</h1>
                 {% for task in tasks %}
 
                 <a href=# id="show_dialog_{{task.key.id()}}">
@@ -124,12 +124,18 @@
                 </a>
 
                 {% endfor %}
-            </div>
+                
+                
+                
+                
+             </div>
 
 
-            <div id="col3">
+         
 
-                <h2>Done tasks</h2>
+            <div id="col2">
+
+                <h1>Done tasks</h1>
                 {% for task in done_tasks %}
 
                 <a href=# id="show_dialog_{{task.key.id()}}">
@@ -153,7 +159,7 @@
 
             </div>
         </div>
-    </div>
+
 
 
 </div>
