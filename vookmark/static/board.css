@@ -252,6 +252,18 @@ body {
      background: #ae4949;
 }
 
+.taskheader {
+   text-align: center;
+   background: #2e2e2e;
+   padding-top: 10px;
+
+    padding-bottom: 10px;
+   
+   width:100%; 
+   position:absolute; 
+   top:0px; 
+   left:0px; 
+}
 
 
 

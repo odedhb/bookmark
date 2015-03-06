@@ -28,36 +28,70 @@
         
 <header>
     
-    <div id="wrapper_one">
     
+<div id="container2">
+	<div id="container1">
+        
+        
+		<div id="col1">    
     
-        <img src="/app/homepage_logo.png">
         
-        <h1>Vookmark, the visual task manager</h1>
+            <h1 style="color: #f05757;">Vookmark</h1>
+            <br>
+                
+                <h2>the visual task manager that lets you pin tasks from the web.</h2>
         
+            
         
-        <h3>Get started now by installing our free chrome button, or create a board for your first project.</h3>
+            <h3>Pin tasks with one click using our chrome button.</h3>
         
-         <a href="https://chrome.google.com/webstore/detail/vookmark/jnagkhifcgehbdehoapfhmkhbejmcaco" class="myButton">Install Chrome Button</a>
+            <a href="https://chrome.google.com/webstore/detail/vookmark/jnagkhifcgehbdehoapfhmkhbejmcaco"               class="myButton">Install Chrome Button</a>
         
         
            
-      <div id="addnewboard" style="float:right; width:200px;">
+            <div id="addnewboard">
                 
-                
-                    <form action="../board">
-                        <h3>Create New Board</h3>
-                    <input type="text" name="id">
-                    <input type="submit" value="Submit">
-                    </form>
+            <form action="../board">
+            <h3>or create new board</h3>
+            <input type="text" name="id">
+            <input type="submit" value="Submit">
+            </form>
                     
-          
-          
-           
-    
- 
+        </div>
     
     </div>
+            
+           <div id="col1">  
+            
+               <h1>My Recent Boards:</h1>
+        
+        
+                {% if recent_boards %}
+                <div id="recentboards">
+    
+                    {% for board in recent_boards %}
+
+                    <div style=" padding:20px; text-align: center;">
+
+                        <a href="/board?id={{board}}">
+                            {{board}}
+                        </a>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+                
+                
+                {% endif %}
+
+        
+        
+         </div>
+</div>
+</div>
+        
     
     
 </header>
@@ -70,46 +104,15 @@
     
         
         
-              <h2>Create Boards for your goals and projects. Drag and drop tasks in the order they                            need to be done.  </h2>
+              <h1>This is a project board. Drag and drop tasks in the order they need to be done. </h1>
     
-                        <img src="/app/walkthrough1.jpg" width='800' height="auto"/>
+                        <img src="/app/walkthrough1.png" width='800' height="auto"/>
         
         
         
+
         
-        
-        
-           <h2>When you visit a page you want to save, use the chrome extension to add it to an existing                   board or create a new board.  </h2>
-        
-        
-        <div id="inline">
     
-            
-            
-            
-            
-               <img src="/app/walkthrough3.jpg" width='800' height="auto"/>
-            
-            
-            
-            </div>
-        
-        
-         
-    
-     
-        
-   
-    
-    
-     
-    
-    
-    
-        
-        
-        
-        
         
          </div>
         

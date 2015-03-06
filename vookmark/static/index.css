@@ -1,8 +1,8 @@
-h1 { font-family: ‘Lato’, Arial, san-serif; font-weight: 900;  }
+h1 { font-family: ‘Lora’, Georgia, serif; font-weight: 400; color: white;  }
 
-h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 400;  }
+h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; color: white;  }
 
-h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 400;   }
+h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 400;  color: white;   }
 
 p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; }
 
@@ -10,41 +10,19 @@ p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; }
 
 
 body {
-	background: #f5f5f5 ;
+	background: #f05757 ;
 }
 
-h1 {
-    color: #263238;
-  
-}
+
+
+
 
 header {
    text-align: center;
-   background: #ffffff;
-    
-padding: 30px;
-    box-shadow: 1px 1px 1px #cfd8dc;
-   width:100%; 
-   position:absolute; 
-   top:0px; 
-   left:0px; 
-    
-}
-
-	
-img {
-    float: center;
-   
-}
-
-header {
-   text-align: center;
-   background: #ffffff;
-   padding-top: 10px;
-   padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-
+   background: #2e2e2e;
+    padding-bottom: 130px;
+    padding-top: 130px;
+  box-shadow: 1px 1px 1px #000000;
    width:100%; 
    position:absolute; 
    top:0px; 
@@ -82,7 +60,7 @@ header {
 }
 
 #walkthrough {
-   margin-top: 300px; 
+   margin-top: 620px; 
     
 }
 
@@ -91,21 +69,47 @@ header {
     display: inline;
 }
 
-#wrapper_one {
-    float: center;
-text-align: center;
-    margin: 0 auto;
-    width: 800px; 
 
-}
 
 
 #wrapper_two {
     float: center;
     text-align: center;
     margin: 0 auto;
+  
     width: 800px; 
 
+}
+
+
+
+#container2 {
+	clear:left;
+	float:left;
+	width:100%;
+	overflow:hidden;
+background: #2e2e2e; /* column 2 background colour */
+}
+#container1 {
+	float:left;
+	width:100%;
+	position:relative;
+	right:50%;
+background: #2e2e2e; /* column 1 background colour */
+}
+#col1 {
+	float:left;
+	width:46%;
+	position:relative;
+	left:52%;
+	overflow:hidden;
+}
+#col2 {
+	float:left;
+	width:46%;
+	position:relative;
+	left:56%;
+	overflow:hidden;
 }
 
 

@@ -10,20 +10,11 @@ body {
 }
 
 
- #wrapper {
-     background: #ffffff;
-     width: 600px;
-     padding: 20px;
-     margin: 0 auto;
-     box-shadow: 2px 5px 1px #bdbdbd;
- }
 
- #menu {
-     display: inline;
-     background: #eeeeee;
-     padding: 10px;
-height: 30px;
-}
+
+
+
+
    
 input[type=text] {
 
