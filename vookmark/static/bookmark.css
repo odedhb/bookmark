@@ -4,7 +4,7 @@ h2 { font-family: ‘Lato’, Arial, san-serif; font-weight: 700; color: white; 
 
 h3 { font-family: ‘Lato’, Arial, san-serif; font-weight: 400;  color: white;   }
 
-p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; }
+p { font-family: ‘Lato’, Arial, san-serif; font-weight: 400; color: white; }
 
 
 
@@ -99,7 +99,7 @@ img {
 	width:100%;
 	position:relative;
 	right:50%;
-	background:#353535; /* column 1 background colour */
+		background:#353535; /* column 1 background colour */
 }
 #col1 {
 	float:left;
@@ -107,6 +107,8 @@ img {
 	position:relative;
 	left:52%;
 	overflow:hidden;
+     padding: 10px;
+    
 }
 #col2 {
 	float:left;
@@ -114,6 +116,8 @@ img {
 	position:relative;
 	left:56%;
 	overflow:hidden;
+    padding: 10px;
+   
 }
 
 
