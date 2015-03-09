@@ -20,42 +20,30 @@
 
 
 <body unresolved>
+    
+    
+<div id="wrapper"> 
 
-<header>
-    
-    
-    <a href=../><img src="/app/logo.png" onmouseover="this.src='/app/logo_active.png'" onmouseout="this.src='/app/logo.png'" /></a>
- 
 
-</header>
     
-    
-   <section style="height: 60px; background-color: #fff; padding-top: 30px; padding-left: 10px;">
-    
-      <p>Choose where to put your new task.</p> 
-      
-    </section>
-    
-    
-    
-    
-<div id="container3">
-    
-    <div id="container2">
     
 
-        <div id="container1">
-
-            <div id="col1">
-                
-                
-                
-                    <form action="../board">
-                <p>New Board</p>
-                <input type="text" name="id">
-                        <input type="text" name="url" value="{{url}}" hidden="true">
-                        <input type="submit" value="Submit">
-                    </form>
+    
+    
+    
+    
+<div id="container2">
+	<div id="container1">
+        
+        
+		      <div id="col1">
+                  
+                  
+                  
+                  
+    <img src="/app/circular_logo.png"  style="width:50px;height:auto">
+                  
+    <img src="/app/temporary_task.jpg"  style="width:240px;height:auto">
                
                 
             </div>
@@ -63,14 +51,16 @@
                 
     
             <div id="col2">
+                
+
     
     
-          {% if recent_boards %}
+                {% if recent_boards %}
                 <div id="existingboards">
-                    <h1>attach to existing board:</h1>
+                    <h2>Pick a Board:</h2>
                     {% for board in recent_boards %}
 
-                    <div style="background:#A41936; padding:20px; text-align: center;">
+                    <div style=" padding:10px; text-align: center;">
                         <a href="/addtask?board={{board}}&url={{url}}">
                             {{board}}
                     </a>
@@ -80,22 +70,47 @@
                 {% endif %}
                 
                 
+                   
+          <form action="../board">
+                <p>Create a board</p>
+                <input type="text" name="id">
+                        <input type="text" name="url" value="{{url}}" hidden="true">
+                        <input type="submit" value="Submit">
+                    </form>
+                
+                
             </div>
+        
+     
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
             
 </div>
 </div>
+  
+    
+    
+    
+    
+
+
+
+
+
+
 </div>   
-    
-    
-    
-    
-
-
-
-
-
-
-
 
 
 </body>
